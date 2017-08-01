@@ -7,7 +7,13 @@ const server = http.createServer((req, res) => {
   let html = ''
   const { query } = url.parse(req.url, true)
   if (query.type === 'search') {
-    https.get('https://dribbble.com/search?per_page=12&page=' + query.page + '&q=' + query.q, (subres) => {
+    https.get({
+      hostname: 'dribbble.com',
+      path: '/search?per_page=12&page=' + query.page + '&q=' + encodeURIComponent(query.q),
+      headers: {
+        'Cookie': 'shot_size_preference=large;shot_meta_preference=with;'
+      }
+    }, (subres) => {
       subres.on('data', (data) => {
         html += data.toString()
       })
