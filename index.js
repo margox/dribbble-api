@@ -49,7 +49,7 @@ const server = http.createServer((req, res) => {
           json.push({
             id: newestShots[index].id || item.attr('id').replace('screenshot-', '') * 1,
             title: item.find('.dribbble-over strong').text(),
-            url: item.find('.dribbble-img img').attr('src'),
+            url: item.find('.dribbble-img picture source').eq(0).attr('srcset'),
             attachments_count: newestShots[index].attachments_count || 0,
             likes_count: newestShots[index].likes_count || item.find('li.fav a').last().text(),
             views_count: newestShots[index].view_count || item.find('li.views span').text(),
