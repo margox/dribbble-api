@@ -3,7 +3,7 @@ const http = require('http')
 const https = require('https')
 const url  = require('url')
 
-const access_token = '4455fa6b9d95ab096cc2fb1c12e5714731cd9119802b33555dcca1e3f2ed4a5b'
+const access_token = '*****'
 
 const objToUrl = (obj) => {
 
