@@ -3,7 +3,7 @@ const http = require('http')
 const https = require('https')
 const url  = require('url')
 
-const access_token = '*****'
+let access_token = '*****'
 
 const objToUrl = (obj) => {
 
@@ -18,8 +18,12 @@ const objToUrl = (obj) => {
 }
 
 const server = http.createServer((req, res) => {
+
   let html = ''
   const { query } = url.parse(req.url, true)
+
+  access_token = query.access_token || access_token
+
   if (query.type === 'search') {
     https.get({
       hostname: 'dribbble.com',

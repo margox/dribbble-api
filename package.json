@@ -1,6 +1,9 @@
 {
   "dependencies": {
-    "cheerio": "^1.0.0-rc.2"
+    "cheerio": "^1.0.0-rc.2",
+    "koa": "^2.3.0",
+    "koa-router": "^7.2.1",
+    "request": "^2.81.0"
   },
   "name": "dribbble-api",
   "version": "1.0.0",
